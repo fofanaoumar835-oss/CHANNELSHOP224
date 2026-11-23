@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#102d25">
+    <meta name="description" content="Découvrez les produits de Channel shop et commandez directement sur WhatsApp.">
+    <title>Channel shop — Votre boutique</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="Channel shop, accueil">
+        <span class="brand-mark">C</span>
+        <span>Channel <b>shop</b></span>
+      </a>
+      <nav aria-label="Navigation principale">
+        <a href="#produits">Produits</a>
+        <a href="#avis">Avis</a>
+        <a class="nav-contact" href="https://wa.me/660527599" target="_blank" rel="noopener noreferrer">Nous contacter</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow"><span class="live-dot"></span> Bienvenue chez nous</span>
+          <h1>Les trouvailles<br>qui font <em>la différence.</em></h1>
+          <p>Découvrez notre sélection et commandez simplement. Une question ? Nous sommes à votre écoute sur WhatsApp.</p>
+          <a class="button button-light" href="#produits">Découvrir les produits <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="art-circle"></div>
+          <div class="art-card art-card-back"></div>
+          <div class="art-card art-card-front"><span>CS</span><small>LE BON CHOIX</small></div>
+          <div class="art-sparkle">✳</div>
+          <div class="art-tag">Sélection<br>avec soin</div>
+        </div>
+        <div class="hero-foot"><span>Une boutique, de belles découvertes.</span><span>01 — CHANNEL SHOP</span></div>
+      </section>
+
+      <section class="section products-section" id="produits">
+        <div class="section-heading">
+          <div><span class="eyebrow">NOTRE SÉLECTION</span><h2>Les produits</h2></div>
+          <p>Un produit vous plaît ? Écrivez-nous pour le commander.</p>
+        </div>
+        <div class="product-grid" id="product-list" aria-live="polite">
+          <div class="empty-state">Chargement des produits…</div>
+        </div>
+      </section>
+
+      <section class="contact-banner">
+        <div><span class="eyebrow">UNE QUESTION ?</span><h2>On en parle sur WhatsApp.</h2><p>Contactez directement Channel shop pour un renseignement ou une commande.</p></div>
+        <a class="button button-green" href="https://wa.me/660527599" target="_blank" rel="noopener noreferrer">Écrire sur WhatsApp <span aria-hidden="true">↗</span></a>
+      </section>
+
+      <section class="section reviews-section" id="avis">
+        <div class="section-heading">
+          <div><span class="eyebrow">VOTRE EXPÉRIENCE</span><h2>Vos avis</h2></div>
+          <p>Envoyez-nous votre avis sur WhatsApp; il sera publié après vérification.</p>
+        </div>
+        <div class="reviews-layout">
+          <form id="review-form" class="review-form">
+            <h3>Partagez votre avis</h3>
+            <label for="review-name">Votre nom</label>
+            <input id="review-name" name="name" maxlength="60" required placeholder="Ex. Alex">
+            <label for="review-rating">Votre note</label>
+            <select id="review-rating" name="rating" required>
+              <option value="5">★★★★★ — Excellent</option>
+              <option value="4">★★★★☆ — Très bien</option>
+              <option value="3">★★★☆☆ — Bien</option>
+              <option value="2">★★☆☆☆ — Peut mieux faire</option>
+              <option value="1">★☆☆☆☆ — Décevant</option>
+            </select>
+            <label for="review-comment">Votre commentaire</label>
+            <textarea id="review-comment" name="comment" rows="4" maxlength="500" required placeholder="Racontez-nous votre expérience…"></textarea>
+            <button class="button button-dark" type="submit">Envoyer mon avis sur WhatsApp <span aria-hidden="true">↗</span></button>
+            <p class="form-message" id="review-message" role="status">Votre WhatsApp s’ouvrira avec votre avis prêt à envoyer.</p>
+          </form>
+          <div class="review-list" id="review-list" aria-live="polite"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand brand-footer" href="#"><span class="brand-mark">C</span><span>Channel <b>shop</b></span></a>
+      <span>© <span id="year"></span> Channel shop</span>
+      <a href="https://wa.me/660527599" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
+      <span>Produits et avis publiés par la propriétaire</span>
+    </footer>
+
+    <script src="./store-data.js"></script>
+    <script src="./app.js" defer></script>
+  </body>
+</html>
