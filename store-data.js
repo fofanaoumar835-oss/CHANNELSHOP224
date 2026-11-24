@@ -1,4 +1,9 @@
-window.CHANNEL_SHOP_DATA = {
+window.CHANNEL_SHOP_DATA = { {
+  name: "Robe bleue",
+  description: "Belle robe, disponible en plusieurs tailles.",
+  price: 12000,
+  image: "./images/robe-bleue.jpg"
+}
   products: [
     {
       name: "Parfum Love ME",
