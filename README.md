@@ -15,24 +15,22 @@ Seules les personnes autorisées à modifier le dépôt peuvent publier des chan
 ## Ajouter un produit avec son prix et sa photo
 
 1. Dans GitHub, ouvrez le dossier `public`, puis choisissez **Add file → Upload files**.
-2. Téléversez la photo du produit et validez avec **Commit changes**. Elle sera enregistrée, par exemple, sous `public/robe-bleue.jpg`.
-3. Rouvrez `public/store-data.js`, cliquez sur le crayon **Edit**, puis remplacez `products: []` par cette liste :
+2. Ouvrez `public/images`, téléversez la photo du produit et validez avec **Commit changes**. Utilisez un nom simple sans espace ni accent, par exemple `robe-bleue.jpg`.
+3. Rouvrez `public/store-data.js`, cliquez sur le crayon **Edit**, puis ajoutez un objet au tableau `products` :
 
    ```js
-   products: [
-     {
-       name: "Robe bleue",
-       description: "Belle robe, disponible en plusieurs tailles.",
-       price: 12000,
-       image: "./robe-bleue.jpg"
-     }
-   ],
+   {
+     name: "Robe bleue",
+     description: "Belle robe, disponible en plusieurs tailles.",
+     price: 12000,
+     image: "./images/robe-bleue.jpg"
+   },
    ```
 
-4. Séparez les produits par une virgule. Enregistrez avec **Commit changes**. GitHub mettra la boutique à jour automatiquement.
+4. Placez la virgule entre les objets, mais pas après le dernier produit. Enregistrez avec **Commit changes**. GitHub mettra la boutique à jour automatiquement.
 5. Pour retirer un article, supprimez son objet de `products` et validez le changement.
 
-L’adresse de l’image dans le code doit correspondre exactement à son nom dans `public` (respectez majuscules, minuscules et extension). Vous pouvez aussi utiliser une adresse d’image publique en HTTPS.
+L’adresse de l’image dans le code doit correspondre exactement à son nom dans `public/images` (respectez majuscules, minuscules et extension). Utilisez des noms simples sans espace ni accent pour éviter les problèmes d’affichage. Vous pouvez aussi utiliser une adresse d’image publique en HTTPS.
 
 ## Publier un avis
 
