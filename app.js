@@ -4,7 +4,7 @@ const reviewList = document.querySelector("#review-list");
 document.querySelector("#year").textContent = new Date().getFullYear();
 
 function formatPrice(price) {
-  return `${new Intl.NumberFormat("fr-FR").format(price)} FCFA`;
+  return `${new Intl.NumberFormat("fr-FR").format(price)} GNF`;
 }
 
 function whatsappLink(product) {
