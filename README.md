@@ -1,6 +1,6 @@
 # Channel shop — publication sur GitHub Pages
 
-Cette boutique est un site statique : **aucune installation de Node.js n’est nécessaire**. Les commandes et les avis sont envoyés sur WhatsApp au `660527599`.
+Cette boutique est un site statique : **aucune installation de Node.js n’est nécessaire**. Les commandes et les avis sont envoyés sur WhatsApp au `+224660527599`.
 
 ## Mettre le site en ligne
 
@@ -46,4 +46,4 @@ Cette modération est nécessaire : GitHub Pages ne permet pas aux visiteurs d�
 
 ## WhatsApp
 
-Le numéro WhatsApp `660527599` est configuré dans `public/index.html` et `public/app.js`.
+Le numéro WhatsApp `+224660527599` est configuré dans `public/index.html` et `public/app.js`.
