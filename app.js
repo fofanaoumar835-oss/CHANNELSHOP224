@@ -9,7 +9,7 @@ function formatPrice(price) {
 
 function whatsappLink(product) {
   const message = `Bonjour Channel shop, je souhaite commander : ${product.name} (${formatPrice(product.price)}).`;
-  return `https://wa.me/660527599?text=${encodeURIComponent(message)}`;
+  return `https://wa.me/+224660527599?text=${encodeURIComponent(message)}`;
 }
 
 function productCard(product) {
