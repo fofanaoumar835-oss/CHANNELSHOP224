@@ -17,7 +17,7 @@
       <nav aria-label="Navigation principale">
         <a href="#produits">Produits</a>
         <a href="#avis">Avis</a>
-        <a class="nav-contact" href="https://wa.me/224660527599" target="_blank" rel="noopener noreferrer">Nous contacter</a>
+        <a class="nav-contact" href="https://wa.me/660527599" target="_blank" rel="noopener noreferrer">Nous contacter</a>
       </nav>
     </header>
 
@@ -50,8 +50,8 @@
       </section>
 
       <section class="contact-banner">
-        <div><span class="eyebrow">UNE QUESTION ?</span><h2>On en parle sur WhatsApp.</h2><p>Contactez directement Channel shop pour un renseignement ou une commande.<br><strong>WhatsApp : +224660527599</strong></p></div>
-        <a class="button button-green" href="https://wa.me/224660527599" target="_blank" rel="noopener noreferrer">Écrire sur WhatsApp <span aria-hidden="true">↗</span></a>
+        <div><span class="eyebrow">UNE QUESTION ?</span><h2>On en parle sur WhatsApp.</h2><p>Contactez directement Channel shop pour un renseignement ou une commande.</p></div>
+        <a class="button button-green" href="https://wa.me/660527599" target="_blank" rel="noopener noreferrer">Écrire sur WhatsApp <span aria-hidden="true">↗</span></a>
       </section>
 
       <section class="section reviews-section" id="avis">
@@ -85,11 +85,80 @@
     <footer class="site-footer">
       <a class="brand brand-footer" href="#"><span class="brand-mark">C</span><span>Channel <b>shop</b></span></a>
       <span>© <span id="year"></span> Channel shop</span>
-      <a href="https://wa.me/224660527599" target="_blank" rel="noopener noreferrer">WhatsApp : +224660527599 ↗</a>
+      <a href="https://wa.me/660527599" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
       <span>Produits et avis publiés par la propriétaire</span>
+      <button class="admin-link" id="open-owner" type="button">Espace propriétaire</button>
     </footer>
 
+    <dialog class="admin-dialog" id="owner-dialog" aria-labelledby="owner-title">
+      <form class="dialog-close-form" method="dialog">
+        <button class="dialog-close" type="submit" aria-label="Fermer">×</button>
+      </form>
+      <h2 id="owner-title">Espace propriétaire</h2>
+      <p class="admin-message" id="owner-status" role="status"></p>
+      <form class="stack-form" id="owner-login">
+        <label for="owner-email">Adresse e-mail</label>
+        <input id="owner-email" name="email" type="email" autocomplete="username" required>
+        <label for="owner-password">Mot de passe</label>
+        <input id="owner-password" name="password" type="password" autocomplete="current-password" required>
+        <button class="button button-dark" type="submit">Se connecter</button>
+        <p class="form-message" id="login-message" role="status"></p>
+      </form>
+
+      <section id="owner-panel" hidden>
+        <div class="owner-panel-heading">
+          <p>Gérez les produits et les avis publiés.</p>
+          <button class="text-button" id="owner-logout" type="button">Se déconnecter</button>
+        </div>
+        <form class="stack-form manager-form" id="product-form">
+          <h3>Produit</h3>
+          <input name="id" type="hidden">
+          <label for="product-name">Nom</label>
+          <input id="product-name" name="name" maxlength="120" required>
+          <label for="product-description">Description</label>
+          <textarea id="product-description" name="description" rows="3" maxlength="500" required></textarea>
+          <label for="product-price">Prix (FCFA)</label>
+          <input id="product-price" name="price" type="number" min="0" step="1" required>
+          <label for="product-image">Adresse de la photo (facultatif)</label>
+          <input id="product-image" name="image" type="url" placeholder="https://…">
+          <div class="manager-actions">
+            <button class="button button-dark" type="submit">Enregistrer le produit</button>
+            <button class="text-button" id="cancel-product-edit" type="button" hidden>Annuler</button>
+          </div>
+        </form>
+        <h3 class="manager-list-title">Produits enregistrés</h3>
+        <div class="manager-list" id="owner-products"></div>
+
+        <form class="stack-form manager-form" id="review-admin-form">
+          <h3>Avis publié</h3>
+          <input name="id" type="hidden">
+          <label for="owner-review-name">Nom affiché</label>
+          <input id="owner-review-name" name="name" maxlength="60" required>
+          <label for="owner-review-rating">Note</label>
+          <select id="owner-review-rating" name="rating" required>
+            <option value="5">5 — Excellent</option>
+            <option value="4">4 — Très bien</option>
+            <option value="3">3 — Bien</option>
+            <option value="2">2 — Peut mieux faire</option>
+            <option value="1">1 — Décevant</option>
+          </select>
+          <label for="owner-review-comment">Commentaire</label>
+          <textarea id="owner-review-comment" name="comment" rows="3" maxlength="500" required></textarea>
+          <label for="owner-review-date">Date</label>
+          <input id="owner-review-date" name="date" type="date" required>
+          <div class="manager-actions">
+            <button class="button button-dark" type="submit">Enregistrer l’avis</button>
+            <button class="text-button" id="cancel-review-edit" type="button" hidden>Annuler</button>
+          </div>
+        </form>
+        <h3 class="manager-list-title">Avis publiés</h3>
+        <div class="manager-list" id="owner-reviews"></div>
+      </section>
+    </dialog>
+
     <script src="./store-data.js"></script>
+    <script src="./supabase-config.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="./app.js" defer></script>
   </body>
 </html>
